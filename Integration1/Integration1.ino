@@ -1,6 +1,8 @@
 // NOTE プレインテグレーションで使用したコード
 #include "Command.h"
+#include "IoExpander.h"
 Command command;
+IoExpander expander;
 int subject;
 void setup()
 {
@@ -8,6 +10,9 @@ void setup()
     Serial2.begin(57600, SERIAL_8E1);
     pinMode(27, OUTPUT);
     digitalWrite(27, HIGH);
+
+    expander.write(6,LOW);
+
 }
 
 void loop()
