@@ -7,7 +7,7 @@ void setup()
     Serial.begin(115200);
     Serial2.begin(57600, SERIAL_8E1);
     pinMode(27, OUTPUT);
-    digitalWrite(27, LOW);
+    digitalWrite(27, HIGH);
 }
 
 void loop()
@@ -28,7 +28,8 @@ void loop()
         }
     }
 
-
+    Serial.print("Subject = ");
+    Serial.println(subject);
     if (command.execute(subject) == true)
     {
         Serial.println("Hello");

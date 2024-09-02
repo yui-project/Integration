@@ -1,15 +1,16 @@
 #pragma once
 #include "Arduino.h"
 #include "RealTimeClock.h"
+#include "IoExpander.h"
 
 // NOTE:プレインテグレーションで使用したコードを移植する形になっている
 class CommunicationWithMissionModule
 {
 private:
     RealTimeClock RTC;
+    IoExpander exp;
 
     uint8_t masterSelectPin = 27;
-    uint8_t moduleMosfetPin;
 
 #define ACK 0x06
 #define NAK 0x15

@@ -7,8 +7,9 @@ CommunicationWithMissionModule::CommunicationWithMissionModule()
 
 bool CommunicationWithMissionModule::execute(int subject)
 {
-    // NOTE:ミッション用コマンドが送られてきたらミッションモジュールを起動したいのでmosfetをHIGHにする
-    digitalWrite(moduleMosfetPin, HIGH);
+    // NOTE:ミッション用コマンドが送られてきたらミッションモジュールを起動したいのでmosfetをHIGHにする 電源ボードにあった
+
+    exp.write(6,HIGH);
 
     // subject番号に応じて動作を変える
     switch (subject)
